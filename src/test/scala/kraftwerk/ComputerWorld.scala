@@ -19,9 +19,10 @@ class ComputerWorld extends Simulation {
     .exec(http("getComputers")
     .get("/computers")
       .check(
-        status.is(200),
+        status is 200,
         regex("""\d+ computers found"""),
         css("#add", "href").saveAs("addComputer")))
+
 
     .exec(http("addNewComputer")
     .get("${addComputer}")
@@ -35,6 +36,12 @@ class ComputerWorld extends Simulation {
       .formParam("discontinued", "2017-10-10") 
       .formParam("company", "") 
       .check(substring("${homeComputer}")))
+
+    // print all session values
+    // .exec { session => println(session(session)); session }
+
+    // print a session value
+    // .exec { session => println(session("homeComputer").as[String]); session }
 
   setUp(computerDbScn.inject(
     constantUsersPerSec(2) during(2 minutes)
