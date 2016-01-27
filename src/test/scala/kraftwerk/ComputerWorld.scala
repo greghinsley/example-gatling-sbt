@@ -23,7 +23,6 @@ class ComputerWorld extends Simulation {
         regex("""\d+ computers found"""),
         css("#add", "href").saveAs("addComputer")))
 
-
     .exec(http("addNewComputer")
     .get("${addComputer}")
       .check(substring("Add a computer")))
