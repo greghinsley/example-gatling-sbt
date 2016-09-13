@@ -15,7 +15,7 @@ class jl extends Simulation {
 		"Upgrade-Insecure-Requests" -> "1")
 
 	val scn = scenario("jl")
-		.exec(http("m.johnlewis.com")
+		.exec(http("m.perf.project4.com")
 			.get("/")
 			.headers(headers_0))
 
