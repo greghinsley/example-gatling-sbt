@@ -8,7 +8,7 @@ import io.gatling.jdbc.Predef._
 class jl extends Simulation {
 
 	val httpProtocol = http
-		.baseURL("https://m.johnlewis.com")
+		.baseURL("https://m.perf.project4.com")
 
 	val headers_0 = Map(
 		"Proxy-Connection" -> "keep-alive",
